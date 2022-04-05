@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:elevation="@dimen/dp_10">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgUserImage"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toEndOf="@id/imgUserImage"
+                android:text="@string/title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_25" />
+
+            <TextView
+                android:id="@+id/tvCreatedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTitle"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@id/imgUserImage"
+                android:text="@string/created_by"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTitle"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@id/tvCreatedBy"
+                android:text="@string/demo_name"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvCreatedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCreatedBy"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@id/imgUserImage"
+                android:text="@string/created_at"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvCreatedAtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCreatedBy"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@id/tvCreatedAt"
+                android:text="@string/created_date"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvClosedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCreatedAt"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@id/imgUserImage"
+                android:text="@string/closed_at"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvClosedDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCreatedAt"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@id/tvClosedDate"
+                android:text="@string/closed_date"
+                android:textColor="@color/black" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
