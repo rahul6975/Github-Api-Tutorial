@@ -15,6 +15,7 @@ import com.rahul.kotlinmvvmapp.viewModel.GitViewModel
 class MainActivity : AppCompatActivity() {
     private lateinit var gitViewModel: GitViewModel
     private lateinit var viewAdapter: ViewAdapter
+    var message = ""
     private var list = arrayListOf<ResponseClass>()
     private lateinit var mainActivityBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +36,11 @@ class MainActivity : AppCompatActivity() {
         result.observe(this, Observer {
             if (it != null) {
                 list.addAll(it)
-                viewAdapter.notifyDataSetChanged()
-                mainActivityBinding.tvTitle.text =
-                    "List of all closed pull request from repo : ${it[0].head?.repo?.name}"
+                viewAdapter.notifyItemChanged(0)
+                message = "List of all closed pull request from repo : ${it[0].head?.repo?.name}"
             }
         })
+        mainActivityBinding.tvTitle.text = message
         mainActivityBinding.progressCircular.visibility = View.GONE
     }
 
