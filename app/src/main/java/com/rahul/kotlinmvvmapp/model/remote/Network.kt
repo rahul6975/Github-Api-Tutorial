@@ -1,4 +1,4 @@
-package com.rahul.kotlinmvvmapp.remote
+package com.rahul.kotlinmvvmapp.model.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

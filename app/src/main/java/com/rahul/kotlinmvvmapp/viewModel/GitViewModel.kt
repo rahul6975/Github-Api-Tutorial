@@ -3,8 +3,8 @@ package com.rahul.kotlinmvvmapp.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.rahul.kotlinmvvmapp.models.ResponseClass
-import com.rahul.kotlinmvvmapp.repository.GitRepository
+import com.rahul.kotlinmvvmapp.model.models.ResponseClass
+import com.rahul.kotlinmvvmapp.model.repository.GitRepository
 import kotlinx.coroutines.Dispatchers
 
 class GitViewModel : ViewModel() {

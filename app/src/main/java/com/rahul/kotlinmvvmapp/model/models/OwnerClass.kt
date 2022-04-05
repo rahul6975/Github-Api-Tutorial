@@ -1,11 +1,10 @@
-package com.rahul.kotlinmvvmapp.models
+package com.rahul.kotlinmvvmapp.model.models
 
 import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 @Generated("com.robohorse.robopojogenerator")
-data class UserClass(
+data class OwnerClass(
 
 	@field:SerializedName("gists_url")
 	val gistsUrl: String? = null,

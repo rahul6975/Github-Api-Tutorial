@@ -1,8 +1,8 @@
-package com.rahul.kotlinmvvmapp.repository
+package com.rahul.kotlinmvvmapp.model.repository
 
-import com.rahul.kotlinmvvmapp.models.ResponseClass
-import com.rahul.kotlinmvvmapp.remote.ApiClient
-import com.rahul.kotlinmvvmapp.remote.Network
+import com.rahul.kotlinmvvmapp.model.models.ResponseClass
+import com.rahul.kotlinmvvmapp.model.remote.ApiClient
+import com.rahul.kotlinmvvmapp.model.remote.Network
 import retrofit2.Response
 
 class GitRepository {

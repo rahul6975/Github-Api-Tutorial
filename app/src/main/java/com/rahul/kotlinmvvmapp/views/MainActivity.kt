@@ -6,9 +6,8 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rahul.kotlinmvvmapp.R
 import com.rahul.kotlinmvvmapp.databinding.ActivityMainBinding
-import com.rahul.kotlinmvvmapp.models.ResponseClass
+import com.rahul.kotlinmvvmapp.model.models.ResponseClass
 import com.rahul.kotlinmvvmapp.viewAdapter.ViewAdapter
 import com.rahul.kotlinmvvmapp.viewModel.GitViewModel
 

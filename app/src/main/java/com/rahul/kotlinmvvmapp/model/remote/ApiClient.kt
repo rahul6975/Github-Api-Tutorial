@@ -1,6 +1,6 @@
-package com.rahul.kotlinmvvmapp.remote
+package com.rahul.kotlinmvvmapp.model.remote
 
-import com.rahul.kotlinmvvmapp.models.ResponseClass
+import com.rahul.kotlinmvvmapp.model.models.ResponseClass
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
