@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rahul.kotlinmvvmapp.databinding.ActivityMainBinding
@@ -21,7 +20,7 @@ import com.rahul.kotlinmvvmapp.viewModel.GitViewModel
 class MainActivity : AppCompatActivity() {
     private lateinit var gitViewModel: GitViewModel
     private lateinit var viewAdapter: ViewAdapter
-    var message = ""
+    private var message = ""
     private var list = arrayListOf<ResponseClass>()
     private lateinit var mainActivityBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     private fun fetchData() {
         if (isOnline(this)) {
             val result = gitViewModel.fetchResult()
-            result.observe(this, Observer {
+            result.observe(this, {
                 if (it != null) {
                     list.addAll(it)
                     viewAdapter.notifyItemChanged(0)
@@ -73,15 +72,19 @@ class MainActivity : AppCompatActivity() {
         val capabilities =
             connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
         if (capabilities != null) {
-            if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
-                return true
-            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
-                return true
-            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
-                Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
-                return true
+            when {
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
+                    return true
+                }
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
+                    return true
+                }
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
+                    return true
+                }
             }
         }
         return false
