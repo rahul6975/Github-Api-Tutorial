@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             val result = gitViewModel.fetchResult()
             result.observe(this, {
                 if (it != null) {
+                    list.clear()
                     list.addAll(it)
                     viewAdapter.notifyItemChanged(0)
                     message =
